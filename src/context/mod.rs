@@ -223,6 +223,12 @@ impl Context {
         Ok(context)
     }
 
+    /// Get current assumed GL state.
+    #[inline]
+    pub fn get_state(&self) -> &RefCell<GlState> {
+        &self.state
+    }
+
     /// Calls `get_framebuffer_dimensions` on the backend object stored by this context.
     #[inline]
     pub fn get_framebuffer_dimensions(&self) -> (u32, u32) {
